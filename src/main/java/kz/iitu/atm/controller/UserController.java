@@ -12,11 +12,6 @@ public class UserController {
     @Autowired
     private IUserService iUserService;
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public User login(@Param(value = "username")String username,@Param(value = "password")String password){
-        return iUserService.checkPassword(username,password);
-    }
-
     @RequestMapping(value = "/get/{id}",method = RequestMethod.GET)
     public User getInfo(@PathVariable Integer id){
         return iUserService.getById(id);

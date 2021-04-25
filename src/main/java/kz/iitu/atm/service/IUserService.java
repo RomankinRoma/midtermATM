@@ -10,6 +10,4 @@ public interface IUserService {
     void delete(Integer id);
     List<User> getAll();
     User getById(Integer id);
-    User getByUsername(String objectname);
-    User checkPassword(String objectname,String password);
 }
