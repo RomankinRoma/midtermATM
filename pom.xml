@@ -80,6 +80,12 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.20</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -94,6 +100,19 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <user>admin</user>
+                    <locations>
+                        <location>filesystem:src/main/resources/sql</location>
+                    </locations>
+                    <password>password</password>
+                    <url>jdbc:postgresql://localhost:5432/atm</url>
                 </configuration>
             </plugin>
         </plugins>
