@@ -49,6 +49,16 @@ public class UserServiceImpl implements IUserService, UserDetailsService {
     }
 
     @Override
+    public User getByUsername(String username) {
+        return userRepo.getByUsername(username);
+    }
+
+    @Override
+    public User getByPhoneNumber(String phone) {
+        return userRepo.getByPhoneNumber(phone);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userRepo.getByUsername(s);
     }

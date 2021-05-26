@@ -10,4 +10,7 @@ public interface IUserService {
     void delete(Integer id);
     List<User> getAll();
     User getById(Integer id);
+    User getByUsername(String username);
+
+    User getByPhoneNumber(String phone);
 }

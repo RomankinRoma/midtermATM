@@ -19,6 +19,8 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String username;
     private String password;
+    private String fullName;
+    private String phoneNumber;
     private Long balance;
     private Role role;
     @Override
